@@ -150,6 +150,10 @@ UPROGS=\
 	$U/_wc\
 	$U/_zombie\
 	$U/_sleep\
+	$U/_pingpong\
+	$U/_primes\
+	$U/_find\
+	$U/_xargs\
 
 
 ifeq ($(LAB),syscall)
@@ -301,6 +305,9 @@ myapi.key:
 		echo An API key should be 32 characters long.; \
 		false; \
 	fi;
+
+gdb:
+	riscv64-unknown-elf-gdb kernel/kernel
 
 
 .PHONY: handin tarball tarball-pref clean grade handin-check
